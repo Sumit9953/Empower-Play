@@ -9,8 +9,11 @@ const styles = StyleSheet.create({
     header: {
         width: "100%",
         height: 40,
-        justifyContent: "center",
-        paddingHorizontal: "6%"
+        justifyContent: "space-between",
+        alignItems:"center",
+        paddingHorizontal: "6%",
+        flexDirection:"row",
+        // backgroundColor:"red"
     },
     title: {
         fontSize: 17,
@@ -53,7 +56,38 @@ const styles = StyleSheet.create({
         fontWeight:"600",
         color:"gray",
         marginTop:"3%"
-    }
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 16,
+      },
+      text: {
+        marginBottom: 100,
+        fontSize: 18,
+        color: 'white',
+      },
+      languagesList: {
+        flex: 1,
+        justifyContent: 'center',
+        padding: 10,
+        backgroundColor: '#6258e8',
+      },
+      button: {
+        backgroundColor: '#6258e8',
+        padding: 10,
+        borderRadius: 50,
+        flexDirection:"row",
+        justifyContent:"space-between"
+      },
+      languageButton: {
+        padding: 10,
+        borderBottomColor: '#dddddd',
+        borderBottomWidth: 1,
+      },
+      lngName: {
+        fontSize: 16,
+        color: 'white',
+      },
 });
 
 export default styles

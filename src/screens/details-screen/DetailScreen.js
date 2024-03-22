@@ -5,9 +5,12 @@ import styles from './style'
 import Icons from "react-native-vector-icons/Ionicons"
 import Header from './Header/Header'
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next'
 // import Animated, { SlideInLeft } from 'react-native-reanimated'
 
 const DetailsScreen = (props) => {
+
+    const { t } = useTranslation();
 
     const navigation = useNavigation();
     const item = props.route.params.item
@@ -22,11 +25,11 @@ const DetailsScreen = (props) => {
 
     const renderItem = ( item, index ) => {
         return (
-            <TouchableOpacity onPress={()=>navigation.navigate("QuizDetailScreen" ,{item:item})} >
+            <TouchableOpacity key={index} onPress={()=>navigation.navigate("QuizDetailScreen" ,{item:item})} >
                 <View style={styles.box} sharedTransitionTag="sharedTag">
                     {/* <AniImage source={{ uri: item?.image_url }} style={styles.icon} entering={BounceIn.delay(100 * index + 1).duration(1000)} /> */}
                     <View style={styles.description}>
-                        <Text style={styles.name}>{item?.name}</Text>
+                        <Text style={styles.name}>{t(item?.name)}</Text>
                         <Text style={styles.count}>{item?.count} Questions</Text>
                     </View>
                     <Image source={{uri: item?.image_url}} style={{

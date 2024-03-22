@@ -9,7 +9,7 @@ import {
   } from 'react-native';
   
   import React, {useRef, useState} from 'react';
-  import {englishData} from './EnglisQuestion';
+  import {englishData , HindiData} from './EnglisQuestion';
   import QuestionItem from './QuestionItem';
 
   import { useNavigation } from '@react-navigation/native';
@@ -17,9 +17,18 @@ import {
 
   const {height, width} = Dimensions.get('window');
 
-  const Quizs = () => {
+  const data = (item) => {
+    if(item.name === "Playing"){
+      return englishData;
+    }
+  }
+
+  const Quizs = (props) => {
+    const item = props.route.params.item
+
     const [currentIndex, setCurrentIndex] = useState(1);
-    const [questions, setQuestions] = useState(englishData);
+    const [questions, setQuestions] = useState(data(item));
+
     const listRef = useRef();
     const [modalVisible, setModalVisible] = useState(false);
 

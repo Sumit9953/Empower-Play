@@ -3,12 +3,15 @@ import React from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from '@react-navigation/native';
 import Header from "./details-screen/Header/Header";
+import { useTranslation } from "react-i18next";
 
 
 const QuizDetailScreen = (props) => {
     const navigation = useNavigation();
     const item = props.route.params.item
     console.log(item);
+
+    const { t } = useTranslation();
 
   return (
     <View
@@ -25,22 +28,7 @@ const QuizDetailScreen = (props) => {
         textAlign:"justify",
         fontSize: 18,
       }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-        necessitatibus, omnis et magni ratione modi earum ipsa natus, enim fugit
-        sint reprehenderit dolores sunt eum laborum atque facilis temporibus hic
-        quaerat. Consequatur obcaecati fuga, itaque ad autem ab? Quos doloremque
-        similique vel sed cumque incidunt ad, ipsum commodi. Incidunt,
-        explicabo? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Quam quas atque ratione suscipit maiores cum natus repellendus. Possimus
-        facere sunt quibusdam sed hic suscipit recusandae, quam eum aperiam
-        explicabo molestiae impedit laboriosam blanditiis dolorem. Ducimus
-        magnam officiis placeat. Vel eum doloribus accusantium impedit atque,
-        facere vero optio magni placeat tenetur et in assumenda iste minima!
-        Praesentium impedit corrupti nobis iure provident cumque necessitatibus
-        illo. Quas reprehenderit alias quia nisi debitis, ab suscipit beatae sed
-        consequuntur aliquid voluptas veniam neque illo consectetur similique
-        impedit pariatur qui libero incidunt aperiam nostrum animi labore iure?
-        Magni a quibusdam autem reiciendis, optio harum perspiciatis.
+     {t('desc')}
       </Text>
 
       <View style={{
@@ -48,9 +36,10 @@ const QuizDetailScreen = (props) => {
         flexDirection:"row",
         justifyContent:"space-between"
       }}>
-        <TouchableOpacity onPress={()=>navigation.navigate("Quizs")} style={{
+        <TouchableOpacity onPress={()=>navigation.navigate("Quizs" , {item:item})} style={{
             backgroundColor:"green",
-            marginTop:85,
+            // marginTop:85,
+
             marginBottom:0,
             borderRadius:5,
             padding:20,
@@ -64,7 +53,7 @@ const QuizDetailScreen = (props) => {
         </TouchableOpacity>
         <TouchableOpacity onPress={()=>navigation.navigate("Hangman")} style={{
             backgroundColor:"red",
-            marginTop:85,
+            // marginTop:85,
             marginBottom:0,
             borderRadius:5,
             padding:20,

@@ -22,26 +22,6 @@ const HomeScreen = ({name}) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.textbox}>
-      <TouchableOpacity style={styles.button} onPress={() => setVisible(true)}>
-        <Text style={styles.buttonText}>{t('change-language')}</Text>
-      </TouchableOpacity>
-        <Modal visible={visible} onRequestClose={() => setVisible(false)}>
-          <View style={styles.languagesList}>
-            {Object.keys(languageResources).map((item, index) => (
-              <TouchableOpacity
-                key={index}
-                style={styles.languageButton}
-                onPress={() => changeLng(item)}
-              >
-                <Text style={styles.lngName}>
-                  {languagesList[item].nativeName}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        </Modal>
-      </View>
     <Header />
     <Categories />
     </View>

@@ -3,9 +3,13 @@ import React, { FC } from 'react'
 import styles from './style'
 import Icons from "react-native-vector-icons/Ionicons"
 import { useNavigation } from '@react-navigation/native'
+import { useTranslation } from 'react-i18next'
 
 
 const Header = ({item}) => {
+
+  const {t} = useTranslation()
+
   const navigation = useNavigation()
   return (
     <View style={styles.container}>
@@ -13,7 +17,7 @@ const Header = ({item}) => {
         <Icons name={"chevron-back-outline"} size={24} color={"black"}/>
       </TouchableOpacity>
       <View style={styles.titleBox}>
-        <Text style={styles.title}>{item?.name}</Text>
+        <Text style={styles.title}>{t(item?.name)}</Text>
         <Text style={styles.description}>{item?.count} Questions</Text>
       </View>
       <Image source={{uri:item?.image_url}} style={styles.avatar}/>
