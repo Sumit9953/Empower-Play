@@ -35,7 +35,9 @@ import {
     const navigation = useNavigation();
 
     const OnSelectOption = (index, x) => {
+
       const tempData = questions;
+
       tempData.map((item, ind) => {
         if (index == ind) {
           if (item.marked !== -1) {
@@ -45,12 +47,14 @@ import {
           }
         }
       });
+      
       let temp = [];
       tempData.map(item => {
         temp.push(item);
       });
       setQuestions(temp);
     };
+
     const getTextScore = () => {
       let marks = 0;
       questions.map(item => {
@@ -60,6 +64,7 @@ import {
       });
       return marks;
     };
+
     const reset = () => {
       const tempData = questions;
       tempData.map((item, ind) => {
@@ -71,6 +76,7 @@ import {
       });
       setQuestions(temp);
     };
+
     return (
       <View style={{flex: 1}}>
         <View

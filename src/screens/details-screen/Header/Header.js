@@ -18,9 +18,9 @@ const Header = ({item}) => {
       </TouchableOpacity>
       <View style={styles.titleBox}>
         <Text style={styles.title}>{t(item?.name)}</Text>
-        <Text style={styles.description}>{item?.count} Questions</Text>
+        {/* <Text style={styles.description}>{item?.count} Questions</Text> */}
       </View>
-      <Image source={{uri:item?.image_url}} style={styles.avatar}/>
+      <Image source={item?.image_url} style={styles.avatar}/>
     </View>
   )
 }

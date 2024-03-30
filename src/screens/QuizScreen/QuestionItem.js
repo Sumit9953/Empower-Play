@@ -1,6 +1,7 @@
 import {View, Text, Dimensions, FlatList, TouchableOpacity} from 'react-native';
 import React from 'react';
 const {height, width} = Dimensions.get('window');
+
 const QuestionItem = ({data, selectedOption}) => {
   return (
     <View style={{width: width}}>

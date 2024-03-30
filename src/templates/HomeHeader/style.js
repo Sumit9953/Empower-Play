@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     description:{
         fontSize:12,
         color:"gray",
-        fontWeight:"600",
+        fontWeight:"800",
         marginTop:"2%"
     },
     button: {
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         borderRadius: 3,
       },
       buttonText: {
-        color: 'white',
+        color: 'black',
         fontSize: 16,
       },
     languagesList: {

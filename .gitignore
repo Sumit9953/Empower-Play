@@ -8,7 +8,7 @@ node_modules/
 dist/
 web-build/
 
-/firebase.js
+./firebase.js
 
 # Native
 *.orig.*

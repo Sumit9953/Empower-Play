@@ -7,6 +7,11 @@ import Header from './Header/Header'
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next'
 // import Animated, { SlideInLeft } from 'react-native-reanimated'
+import play from "./Assets/play.jpg"
+import Education from "./Assets/education.png"
+import Health from "./Assets/helth.png"
+import living from "./Assets/leving.png"
+import Hap from "./Assets/hap.png"
 
 const DetailsScreen = (props) => {
 
@@ -15,12 +20,12 @@ const DetailsScreen = (props) => {
     const navigation = useNavigation();
     const item = props.route.params.item
     const Data = [
-        { id: 3, name: "Playing", count: 10, image_url: "https://cdn3d.iconscout.com/3d/premium/thumb/maths-class-5748771-4817936.png" },
-        { id: 2, name: "Eductaions", count: 10, image_url: "https://static.vecteezy.com/system/resources/previews/009/827/726/original/back-to-school-physics-icon-3d-illustration-png.png" },
-        { id: 4, name: "Leving", count: 18, image_url: "https://cdn3d.iconscout.com/3d/premium/thumb/science-6848262-5607049.png" },
-        { id: 5, name: "Working", count: 10, image_url: "https://cdn3d.iconscout.com/3d/premium/thumb/maths-class-5748771-4817936.png" },
-        { id: 1, name: "Health", count: 10, image_url: "https://static.vecteezy.com/system/resources/previews/009/827/726/original/back-to-school-physics-icon-3d-illustration-png.png" },
-        { id: 8, name: "Others", count: 18, image_url: "https://cdn3d.iconscout.com/3d/premium/thumb/science-6848262-5607049.png" },
+        { id: 3, name: "Playing", count: 10, image_url: play },
+        { id: 2, name: "Eductaions", count: 10, image_url: Education },
+        { id: 4, name: "Leving", count: 18, image_url: living },
+        { id: 5, name: "Working", count: 10, image_url: Hap },
+        { id: 1, name: "Health", count: 10, image_url: Health },
+        // { id: 8, name: "Others", count: 18, image_url: "https://cdn3d.iconscout.com/3d/premium/thumb/science-6848262-5607049.png" },
     ]
 
     const renderItem = ( item, index ) => {
@@ -30,9 +35,9 @@ const DetailsScreen = (props) => {
                     {/* <AniImage source={{ uri: item?.image_url }} style={styles.icon} entering={BounceIn.delay(100 * index + 1).duration(1000)} /> */}
                     <View style={styles.description}>
                         <Text style={styles.name}>{t(item?.name)}</Text>
-                        <Text style={styles.count}>{item?.count} Questions</Text>
+                        {/* <Text style={styles.count}>{item?.count} Questions</Text> */}
                     </View>
-                    <Image source={{uri: item?.image_url}} style={{
+                    <Image source={item?.image_url} style={{
                         width:100,
                         height:100
                     }} />

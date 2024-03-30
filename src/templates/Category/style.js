@@ -3,6 +3,7 @@ const { width, height } = Dimensions.get("window")
 const styles = StyleSheet.create({
     container: {
         width: "100%",
+        // height:height,
         flexGrow: 1,
         // padding:20,
     },
@@ -18,13 +19,13 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 17,
         fontWeight: "700",
-        color: "black"
+        color:"black"
     },
     box: {
         width: width / 2.3,
-        height: width / 2.1,
+        height: width / 2.0,
         borderRadius: 10,
-        backgroundColor: "white",
+        backgroundColor: "#fff",
         margin: 7,
         shadowColor: "#000",
         shadowOffset: {
@@ -57,6 +58,7 @@ const styles = StyleSheet.create({
         color:"gray",
         marginTop:"3%"
     },
+
     buttonText: {
         color: 'white',
         fontSize: 16,
@@ -68,9 +70,9 @@ const styles = StyleSheet.create({
       },
       languagesList: {
         flex: 1,
-        justifyContent: 'center',
+        // justifyContent: 'center',
         padding: 10,
-        backgroundColor: '#6258e8',
+        backgroundColor: '#5755FE',
       },
       button: {
         backgroundColor: '#6258e8',

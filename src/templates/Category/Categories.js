@@ -8,25 +8,27 @@ import i18next, { languageResources } from "../../../services/i18next";
 import  languagesList  from "../../../services/languagesList.json";
 import translatePng from "../../../assets/translate.png"
 
+import boyImg from "./Assets/boy.png"
+import girlImg from "./Assets/girl.png"
+import boygirl from "./Assets/boygirl.png"
+
 const Data = [
-    { id: 3, name: "Male", count: 10, image_url: "https://i.pinimg.com/originals/28/3e/b6/283eb67ffaecdb77b98fbd828d1e6b45.jpg" },
-    { id: 2, name: "Female", count: 10, image_url: "https://www.laughingplace.com/w/wp-content/uploads/2022/04/fun-facts-about-disneys-minnie-mouse.jpg" },
-    { id: 4, name: "Others", count: 18, image_url: "https://cdn3d.iconscout.com/3d/premium/thumb/science-6848262-5607049.png" },
+    { id: 3, name: "Male", count: 10, image: boyImg },
+    { id: 2, name: "Female", count: 10, image: girlImg },
+    { id: 1, name: "Others", count: 10, image: boygirl },
+    // { id: 4, name: "Others", count: 18, image_url: "https://cdn3d.iconscout.com/3d/premium/thumb/science-6848262-5607049.png" },
 ]
 
 
 const Categories = () => {
 
     const [visible, setVisible] = useState(false);
-    // const { t } = useTranslation();
   
     const changeLng = (lng) => {
       i18next.changeLanguage(lng);
       setVisible(false);
     };
-    // Data.map((e) => {
-    //     console.log(e);
-    // })
+  
 
     const { t } = useTranslation();
 
@@ -39,11 +41,11 @@ const Categories = () => {
                     {/* <AniImage source={{ uri: item?.image_url }} style={styles.icon} entering={BounceIn.delay(100 * index + 1).duration(1000)} /> */}
                     <View style={styles.description}>
                         <Text style={styles.name}>{t(item?.name)}</Text>
-                        <Text style={styles.count}>{item?.count} Questions</Text>
+                        {/* <Text style={styles.count}>{item?.count} Questions</Text> */}
                     </View>
-                    <Image source={{uri: item?.image_url}} style={{
+                    <Image source={item.image} style={{
                         width:100,
-                        height:100
+                        height:120,
                     }} />
                 </View>
             </TouchableOpacity>
@@ -57,7 +59,7 @@ const Categories = () => {
             <Text style={styles.title}>Rights about</Text>
 
             <View style={styles.textbox}>
-      <TouchableOpacity style={styles.button} onPress={() => setVisible(true)}>
+      <TouchableOpacity style={{}} onPress={() => setVisible(true)}>
         {/* <Text style={styles.buttonText}>{t('change-language')}</Text> */}
         <Image source={translatePng} style={{
             width:30,
@@ -66,7 +68,17 @@ const Categories = () => {
         }} />
       </TouchableOpacity>
         <Modal visible={visible} onRequestClose={() => setVisible(false)}>
+        
           <View style={styles.languagesList}>
+         
+          <Text style={{
+            textAlign:"center",
+            color:"white",
+            fontSize:20
+          }}>
+          Choose Language
+          </Text>
+
             {Object.keys(languageResources).map((item, index) => (
               <TouchableOpacity
                 key={index}
