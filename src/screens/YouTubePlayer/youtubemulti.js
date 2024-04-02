@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import YoutubeIframe, { getYoutubeMeta } from "react-native-youtube-iframe";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Footer from "../footer";
 
 const videoSeries = [
   "HCYLdtug8sk",
@@ -61,6 +62,7 @@ const Youtubemulti = () => {
       >
         <VideoModal videoId={selectedVideo} onClose={closeModal} />
       </Modal>
+      <Footer />
     </SafeAreaView>
   );
 };

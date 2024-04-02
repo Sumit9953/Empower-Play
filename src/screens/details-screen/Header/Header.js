@@ -20,7 +20,7 @@ const Header = ({item}) => {
         <Text style={styles.title}>{t(item?.name)}</Text>
         {/* <Text style={styles.description}>{item?.count} Questions</Text> */}
       </View>
-      <Image source={item?.image_url} style={styles.avatar}/>
+      <Image source={item?.image} style={styles.avatar}/>
     </View>
   )
 }

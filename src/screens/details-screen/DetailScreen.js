@@ -7,6 +7,7 @@ import Header from './Header/Header'
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next'
 // import Animated, { SlideInLeft } from 'react-native-reanimated'
+
 import play from "./Assets/play.jpg"
 import Education from "./Assets/education.png"
 import Health from "./Assets/helth.png"
@@ -19,10 +20,13 @@ const DetailsScreen = (props) => {
 
     const navigation = useNavigation();
     const item = props.route.params.item
+
+    // console.log(item);
+
     const Data = [
         { id: 3, name: "Playing", count: 10, image_url: play },
         { id: 2, name: "Eductaions", count: 10, image_url: Education },
-        { id: 4, name: "Leving", count: 18, image_url: living },
+        { id: 4, name: "Life", count: 18, image_url: living },
         { id: 5, name: "Working", count: 10, image_url: Hap },
         { id: 1, name: "Health", count: 10, image_url: Health },
         // { id: 8, name: "Others", count: 18, image_url: "https://cdn3d.iconscout.com/3d/premium/thumb/science-6848262-5607049.png" },
@@ -50,6 +54,7 @@ const DetailsScreen = (props) => {
     return (
     <View style={styles.container}>
         <Header item={item} />
+
       <View style={{
             flex:1,
             flexDirection:"row",

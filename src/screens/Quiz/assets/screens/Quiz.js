@@ -12,7 +12,7 @@ const Quiz = () => {
 
     const {t} = useTranslation();
 
-    const Data = t('Male') === "pu  rush" ? Hindidata : data;
+    const Data = t('Male') === "पुरुष" ? Hindidata : data;
 
     const allQuestions = Data;
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -37,6 +37,7 @@ const Quiz = () => {
         // Show Next Button
         setShowNextButton(true)
     }
+
     const handleNext = () => {
         if(currentQuestionIndex== allQuestions.length-1){
             // Last Question
@@ -55,6 +56,7 @@ const Quiz = () => {
             useNativeDriver: false
         }).start();
     }
+
     const restartQuiz = () => {
         setShowScoreModal(false);
 
@@ -71,8 +73,6 @@ const Quiz = () => {
             useNativeDriver: false
         }).start();
     }
-
-
 
     const renderQuestion = () => {
         return (
@@ -96,6 +96,7 @@ const Quiz = () => {
             </View>
         )
     }
+
     const renderOptions = () => {
         return (
             <View>
@@ -159,6 +160,7 @@ const Quiz = () => {
             </View>
         )
     }
+
     const renderNextButton = () => {
         if(showNextButton){
             return (
@@ -175,12 +177,12 @@ const Quiz = () => {
         }
     }
 
-
     const [progress, setProgress] = useState(new Animated.Value(0));
     const progressAnim = progress.interpolate({
         inputRange: [0, allQuestions.length],
         outputRange: ['0%','100%']
     })
+    
     const renderProgressBar = () => {
         return (
             <View style={{

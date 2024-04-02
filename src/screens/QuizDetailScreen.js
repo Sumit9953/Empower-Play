@@ -118,11 +118,10 @@ const QuizDetailScreen = (props) => {
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => navigation.navigate("Quizs", { item: item })}
+          onPress={() => navigation.navigate("Hangman")}
           style={{
-            backgroundColor: "#8B93FF",
+            backgroundColor: "#67C6E3",
             borderRadius: 10,
-            // padding: 20,
             flexDirection: "row",
             justifyContent: "space-around",
             alignItems:"center",
@@ -137,13 +136,13 @@ const QuizDetailScreen = (props) => {
               textAlign: "center",
             }}
           >
-            Tic Toc
+            Hangman
           </Text>
           <Icons name={"game-controller-outline"} size={34} color={"black"}/>
         </TouchableOpacity>
       </View>
 
-      <View style={{
+      {/* <View style={{
           width: "100%",
           flexDirection: "row",
           // backgroundColor:"red",
@@ -201,7 +200,8 @@ const QuizDetailScreen = (props) => {
           </Text>
           <Icons name={"game-controller-outline"} size={34} color={"black"}/>
         </TouchableOpacity>
-      </View>
+
+      </View> */}
     </View>
   );
 };
