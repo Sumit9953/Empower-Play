@@ -3,7 +3,7 @@ const { width, height } = Dimensions.get("window")
 const styles = StyleSheet.create({
     container: {
         width: "100%",
-        marginTop:10,
+        // marginTop:10,
         flexGrow: 1,
         // padding:20,
     },

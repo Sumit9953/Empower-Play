@@ -43,7 +43,14 @@ const Youtubemulti = () => {
         contentContainerStyle={{ margin: 16 }}
         ListHeaderComponent={
           <>
-            <Text style={{ fontSize: 18, fontWeight: "bold" , textAlign:"center" , marginTop:20 }}>
+            <Text
+              style={{
+                fontSize: 18,
+                fontWeight: "bold",
+                textAlign: "center",
+                marginTop: 20,
+              }}
+            >
               Video Related To Rights...
             </Text>
             <ProgressBar progress={progress * 100} />
@@ -107,7 +114,13 @@ const VideoItem = ({ videoId, onPress }) => {
     return (
       <TouchableOpacity
         onPress={() => onPress(videoId)}
-        style={{ flexDirection: "row", marginVertical: 16 }}
+        style={{
+          flexDirection: "row",
+          marginVertical: 16,
+          elevation: 4,
+          padding: 10,
+          backgroundColor: "#8ACDD7",
+        }}
       >
         <Image
           source={{ uri: videoMeta.thumbnail_url }}

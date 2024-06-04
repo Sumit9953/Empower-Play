@@ -8,7 +8,7 @@ const WordBox = ({ wordData }) => {
   const startingLetter = wordData.answer[0];
   return (
     <View style={styles.container}>
-      <Text>Opposite word of</Text>
+      <Text>Guess word of</Text>
       <Text style={styles.word}>{wordData.word}</Text>
       <View style={styles.hintContainer}>
         <TouchableOpacity onPress={toggleHint}>

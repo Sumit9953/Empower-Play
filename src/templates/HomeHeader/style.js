@@ -2,13 +2,14 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     container:{
-        marginTop:10,
-        // backgroundColor:"red",
+        // marginTop:10,
+        backgroundColor:"#fff",
         width:"100%",
-        height:"10%",
+        height:"12%",
         flexDirection:"row",
         alignItems:"center",
-        justifyContent:"space-evenly"
+        justifyContent:"space-evenly",
+        paddingTop:40
     },
     titleBox:{
         height:"100%",
